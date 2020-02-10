@@ -1,1 +1,28 @@
-<p>Hello World</p>
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <br /><br /><br />
+    <h1 class="headName">Green Cloud Technologies Project</h1><br />
+    <p class="name">by Jackson Bailey</p>
+</div>
+<br />
+<br />
+<div class="paragraph-center">
+    <p class="numberEnter">Please enter a number below.</p>
+</div>
+<p id="ErrorMessage"></p>
+
+<form method="post" class="paragraph-center">
+    <input id="textBox" name="Text" type="text" />
+    <input type="submit" value="Submit" />
+</form>
+@{
+    {
+        <p class="paragraph-center">@if (Model.userInput != 0)
+        {@Model.MathProb()}</p>
+    }
+}
